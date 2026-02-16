@@ -55,6 +55,7 @@ function isAccountValid(index: number) {
 }
 
 async function validateAndSet(val: TAccount[]) {
+  if(!isFormTouched.value) return;
   const validationResult = await validate();
   const validAccounts = val.filter((el, index) => {
     return isAccountValid(index)
